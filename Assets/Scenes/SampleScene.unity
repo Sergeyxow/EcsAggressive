@@ -238,6 +238,11 @@ PrefabInstance:
       propertyPath: route
       value: 
       objectReference: {fileID: 1294342242}
+    - target: {fileID: 7131929534813928383, guid: 1c5e31af7c6d1b9468b06fd89d865fa0,
+        type: 3}
+      propertyPath: btnTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ef53b8c4e7ece15428b07a0e5646023f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c5e31af7c6d1b9468b06fd89d865fa0, type: 3}
 --- !u!1 &193212192
@@ -1022,6 +1027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1883610923}
   - component: {fileID: 1883610922}
+  - component: {fileID: 1883610924}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1056,6 +1062,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1883610924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883610921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd094cf6a0f5ef4b97b4089f7d13350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2012850690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,6 +1175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Npc
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336673321889844665, guid: 1c5e31af7c6d1b9468b06fd89d865fa0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1336673321889844667, guid: 1c5e31af7c6d1b9468b06fd89d865fa0,
         type: 3}

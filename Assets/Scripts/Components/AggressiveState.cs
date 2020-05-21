@@ -1,5 +1,5 @@
 namespace Client {
-    struct AttackState {
+    struct AggressiveState {
         // add your data here.
     }
 }
