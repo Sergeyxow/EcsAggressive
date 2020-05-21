@@ -6,6 +6,8 @@ namespace Client {
         EcsWorld _world;
         EcsSystems _systems;
 
+        public GameData _gameData;
+
         void Start () {
             // void can be switched to IEnumerator for support coroutines.
             
@@ -28,6 +30,7 @@ namespace Client {
                 // inject service instances here (order doesn't important), for example:
                 // .Inject (new CameraService ())
                 // .Inject (new NavMeshSupport ())
+                .Inject(_gameData)
                 .Init ();
         }
 

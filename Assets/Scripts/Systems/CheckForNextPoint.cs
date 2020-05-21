@@ -6,6 +6,7 @@ namespace Client
     public class CheckForNextPoint : IEcsRunSystem
     {
         private EcsFilter<Npc, IdleState, RouteMover, Mover>.Exclude<Rest> _filter;
+        private GameData _gameData;
         
         public void Run()
         {
@@ -32,7 +33,7 @@ namespace Client
                         nextPointIndex++;
 
                     ref Rest restComponent = ref _filter.GetEntity(index).Set<Rest>();
-                    restComponent.time = Random.Range(0.1f, 1f);
+                    restComponent.time = Random.Range(_gameData.minRestTime, _gameData.maxRestTime);
                     restComponent.timePassed = 0;
                     restComponent.nextPointIndex = nextPointIndex;
                 }
