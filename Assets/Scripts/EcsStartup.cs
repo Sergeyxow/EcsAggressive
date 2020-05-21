@@ -19,6 +19,11 @@ namespace Client {
 #endif
             _systems
                 .Add(new NpcInitSystem())
+                
+                .Add(new OnKilledSystem())
+                .Add(new SwitchToAggressiveSystem())
+                .Add(new SwitchToIdleSystem())
+                
                 .Add(new FollowRouteSystem())
                 .Add(new FollowTargetSystem())
                 .Add(new AttackSystem())
@@ -26,10 +31,9 @@ namespace Client {
                 .Add(new MoveSystem())
                 .Add(new CheckForNextPoint())
                 .Add(new RestSystem())
-                .Add(new SwitchToAggressiveSystem())
-                .Add(new SwitchToIdleSystem())
                 .Add(new AttackCooldownSystem())
                 .Add(new TakeDamageSystem())
+                .Add(new DeathSystem())
                 
                 // register one-frame components (order is important), for example:
                 .OneFrame<SwitchToAggressiveFlag>()

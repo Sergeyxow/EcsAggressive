@@ -25,10 +25,10 @@ namespace Client
 
                 if (entity.Has<IdleState>())
                 {
+                    EcsEntity randomTarget = FindRandomTarget(entity);
+                    
                     entity.Unset<IdleState>();
                     entity.Set<AggressiveState>();
-
-                    EcsEntity randomTarget = FindRandomTarget(entity);
 
                     ref var followTarget = ref entity.Set<FollowTarget>();
                     followTarget.targetTransform = randomTarget.Set<Npc>().objectRef.transform;
@@ -49,6 +49,7 @@ namespace Client
                 return _npcFilter.GetEntity(index);
             }
 
+            sourceEntity.Unset<SwitchToAggressiveFlag>();
             throw new Exception("No target to attack");
         }
     }

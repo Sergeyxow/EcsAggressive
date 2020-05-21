@@ -38,7 +38,9 @@ namespace Client
                 }
                 else
                 {
-                    bullet.target.Set<DamageFlag>().value = 1;
+                    ref var damageFlag = ref bullet.target.Set<DamageFlag>();
+                    damageFlag.value = 1;
+                    damageFlag.source = bullet.attacker;
                     
                     Object.Destroy(bullet.transform.gameObject);
                     _filter.GetEntity(index).Destroy();

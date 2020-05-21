@@ -17,7 +17,7 @@ namespace Client
 
                 if (npc.health <= 0)
                 {
-                    _filter.GetEntity(index).Set<DeathFlag>();
+                    _filter.GetEntity(index).Set<DeathFlag>().killer = damage.source;
                 }
             }
         }
