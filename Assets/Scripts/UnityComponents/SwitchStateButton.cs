@@ -29,18 +29,7 @@ public class SwitchStateButton : MonoBehaviour
         }
 
         EcsEntity npcEntity = npcObject.entity;
-
-        if (npcEntity.Has<AggressiveState>())
-        {
-            Debug.Log("Entity's state is already aggressive");
-            return;
-        }
-
-        if (npcEntity.Has<IdleState>())
-        {
-            npcEntity.Unset<IdleState>();
-            npcEntity.Set<AggressiveState>();
-        }
+        npcEntity.Set<SwitchToAggressiveFlag>();
     }
 
     private void MakeIdle()
@@ -55,17 +44,6 @@ public class SwitchStateButton : MonoBehaviour
         }
 
         EcsEntity npcEntity = npcObject.entity;
-
-        if (npcEntity.Has<IdleState>())
-        {
-            Debug.Log("Entity's state is already idle");
-            return;
-        }
-
-        if (npcEntity.Has<AggressiveState>())
-        {
-            npcEntity.Unset<AggressiveState>();
-            npcEntity.Set<IdleState>();
-        }
+        npcEntity.Set<SwitchToIdleFlag>();
     }
 }

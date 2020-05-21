@@ -23,9 +23,12 @@ namespace Client {
                 .Add(new MoveSystem())
                 .Add(new CheckForNextPoint())
                 .Add(new RestSystem())
+                .Add(new SwitchToAggressiveSystem())
+                .Add(new SwitchToIdleSystem())
                 
                 // register one-frame components (order is important), for example:
-                //.OneFrame()
+                .OneFrame<SwitchToAggressiveFlag>()
+                .OneFrame<SwitchToIdleFlag>()
                 
                 // inject service instances here (order doesn't important), for example:
                 // .Inject (new CameraService ())
