@@ -26,10 +26,12 @@ namespace Client {
                 .Add(new RestSystem())
                 .Add(new SwitchToAggressiveSystem())
                 .Add(new SwitchToIdleSystem())
+                .Add(new AttackCooldownSystem())
                 
                 // register one-frame components (order is important), for example:
                 .OneFrame<SwitchToAggressiveFlag>()
                 .OneFrame<SwitchToIdleFlag>()
+                .OneFrame<AttackFlag>()
                 
                 // inject service instances here (order doesn't important), for example:
                 // .Inject (new CameraService ())
