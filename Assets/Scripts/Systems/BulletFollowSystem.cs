@@ -38,7 +38,7 @@ namespace Client
                 }
                 else
                 {
-                    bullet.target.Set<Damage>().value = 1;
+                    bullet.target.Set<DamageFlag>().value = 1;
                     
                     Object.Destroy(bullet.transform.gameObject);
                     _filter.GetEntity(index).Destroy();

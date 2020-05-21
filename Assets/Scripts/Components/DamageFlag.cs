@@ -1,6 +1,6 @@
 ﻿namespace Client
 {
-    public struct Damage
+    public struct DamageFlag
     {
         public int value;
     }
