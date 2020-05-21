@@ -5,6 +5,12 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GameData : ScriptableObject
 {
+    [Header("Rest Timing")]
     public float minRestTime;
     public float maxRestTime;
+
+    [Header("Aggressive state data")] 
+    public float distanceToAttack;
+    public float distanceToStopFollowing;
+
 }

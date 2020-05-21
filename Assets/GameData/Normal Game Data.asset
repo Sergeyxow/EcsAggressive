@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minRestTime: 0.5
   maxRestTime: 1.5
+  distanceToAttack: 2
+  distanceToStopFollowing: 1.5
