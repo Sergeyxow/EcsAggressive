@@ -6,5 +6,6 @@ namespace Client
     {
         public float speed;
         public Vector3 direction;
+        public Transform transform;
     }
 }

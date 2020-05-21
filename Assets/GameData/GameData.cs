@@ -13,4 +13,8 @@ public class GameData : ScriptableObject
     public float distanceToAttack;
     public float distanceToStopFollowing;
     public int startHP;
+
+    [Header("Bullet")] 
+    public GameObject bulletPrefab;
+    public float bulletSpeed;
 }

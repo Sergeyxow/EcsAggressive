@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using Leopotam.Ecs;
+using UnityEngine;
 
 namespace Client
 {
     public struct FollowTarget
     {
-        public Transform target;
+        public Transform targetTransform;
+        public EcsEntity targetEntity;
     }
 }

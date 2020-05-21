@@ -5,5 +5,6 @@ namespace Client {
     {
         public GameObject objectRef;
         public int health;
+        public Transform bulletSpawnPoint;
     }
 }

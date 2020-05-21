@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using System;
+using JetBrains.Annotations;
 using Leopotam.Ecs;
 using UnityEditorInternal.Profiling.Memory.Experimental.FileFormat;
 using UnityEngine;
@@ -27,18 +28,17 @@ namespace Client
                     entity.Unset<IdleState>();
                     entity.Set<AggressiveState>();
 
-                    Transform randomTarget = FindRandomTarget(entity);
+                    EcsEntity randomTarget = FindRandomTarget(entity);
 
-                    if (randomTarget)
-                    {
-                        entity.Set<FollowTarget>().target = randomTarget;
-                    }
+                    ref var followTarget = ref entity.Set<FollowTarget>();
+                    followTarget.targetTransform = randomTarget.Set<Npc>().objectRef.transform;
+                    followTarget.targetEntity = randomTarget;
                 }
             }
         }
 
-        [CanBeNull]
-        private Transform FindRandomTarget(EcsEntity sourceEntity)
+        
+        private EcsEntity FindRandomTarget(EcsEntity sourceEntity)
         {
 
             foreach (var index in _npcFilter)
@@ -46,10 +46,10 @@ namespace Client
                 if (_npcFilter.GetEntity(index) == sourceEntity)
                     continue;
 
-                return _npcFilter.Get1(index).objectRef.transform;
+                return _npcFilter.GetEntity(index);
             }
 
-            return null;
+            throw new Exception("No target to attack");
         }
     }
 }

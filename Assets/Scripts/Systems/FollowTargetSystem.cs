@@ -17,7 +17,7 @@ namespace Client
                 ref var npc = ref _filter.Get4(index);
 
                 Vector3 currentPos = npc.objectRef.transform.position;
-                Vector3 targetPos = followTarget.target.position;
+                Vector3 targetPos = followTarget.targetTransform.position;
 
                 float distance = Vector3.Distance(currentPos, targetPos);
 
@@ -26,6 +26,12 @@ namespace Client
                     Vector3 direction = (targetPos - currentPos).normalized;
 
                     mover.direction = direction;
+                }
+
+                if (distance <= _gameData.distanceToAttack)
+                {
+                    _filter.GetEntity(index).Set<AttackFlag>();
+                    //Debug.Log("Attack flag");
                 }
             }
         }

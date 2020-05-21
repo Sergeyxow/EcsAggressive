@@ -16,3 +16,7 @@ MonoBehaviour:
   maxRestTime: 1.5
   distanceToAttack: 2
   distanceToStopFollowing: 1.5
+  startHP: 5
+  bulletPrefab: {fileID: 1023414032333313622, guid: e8da616882af51a4c81e062bd5e51da1,
+    type: 3}
+  bulletSpeed: 7

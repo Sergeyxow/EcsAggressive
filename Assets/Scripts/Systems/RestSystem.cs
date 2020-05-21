@@ -5,7 +5,7 @@ namespace Client
 {
     public class RestSystem : IEcsRunSystem
     {
-        private EcsFilter<Rest, RouteMover, Npc, IdleState> _filter;
+        private EcsFilter<Rest, RouteMover, Npc> _filter;
         
         public void Run()
         {

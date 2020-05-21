@@ -8,4 +8,5 @@ public class NpcObject : MonoBehaviour
     [HideInInspector] public EcsEntity entity;
     public Route route;
     public float speed;
+    public Transform bulletSpawnPoint;
 }

@@ -19,13 +19,16 @@ namespace Client {
                 ref var npc = ref npcEntity.Set<Npc>();
                 npc.objectRef = npcObj;
                 npc.health = _gameData.startHP;
+                npc.bulletSpawnPoint = npcObjectScript.bulletSpawnPoint;
                 
                 ref RouteMover routeMover = ref npcEntity.Set<RouteMover>();
                 routeMover.points = (Vector3[])npcObjectScript.route.points.Clone();
                 // routeMover.points = npcObjectScript.route.points;
                 routeMover.moveToPointIdx = 0;
 
-                npcEntity.Set<Mover>().speed = npcObjectScript.speed;
+                ref var mover = ref npcEntity.Set<Mover>();
+                mover.speed = npcObjectScript.speed;
+                mover.transform = npcObj.transform;
                 npcEntity.Set<IdleState>();
             }
         }

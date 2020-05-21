@@ -21,6 +21,8 @@ namespace Client {
                 .Add(new NpcInitSystem())
                 .Add(new FollowRouteSystem())
                 .Add(new FollowTargetSystem())
+                .Add(new AttackSystem())
+                .Add(new BulletFollowSystem())
                 .Add(new MoveSystem())
                 .Add(new CheckForNextPoint())
                 .Add(new RestSystem())
