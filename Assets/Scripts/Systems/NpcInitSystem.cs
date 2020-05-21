@@ -5,6 +5,7 @@ namespace Client {
     sealed class NpcInitSystem : IEcsInitSystem {
         // auto-injected fields.
         readonly EcsWorld _world = null;
+        private GameData _gameData;
         
         public void Init () 
         {
@@ -14,8 +15,10 @@ namespace Client {
                 
                 EcsEntity npcEntity = _world.NewEntity();
                 npcObjectScript.entity = npcEntity;
-                
-                npcEntity.Set<Npc>().objectRef = npcObj;
+
+                ref var npc = ref npcEntity.Set<Npc>();
+                npc.objectRef = npcObj;
+                npc.health = _gameData.startHP;
                 
                 ref RouteMover routeMover = ref npcEntity.Set<RouteMover>();
                 routeMover.points = (Vector3[])npcObjectScript.route.points.Clone();

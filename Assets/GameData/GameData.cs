@@ -12,5 +12,5 @@ public class GameData : ScriptableObject
     [Header("Aggressive state data")] 
     public float distanceToAttack;
     public float distanceToStopFollowing;
-
+    public int startHP;
 }
