@@ -11,7 +11,6 @@ namespace Client
         {
             foreach (var index in _filter)
             {
-                Debug.Log("sdfsd");
                 var entity = _filter.GetEntity(index);
                 entity.Set<SwitchToIdleFlag>();
                 entity.Unset<KilledTarget>();
